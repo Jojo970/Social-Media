@@ -41,8 +41,7 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  // const fullName = `${user.firstName} ${user.lastName}`
-  const fullName = "Jong Lee"
+  const fullName = `${user.firstName} ${user.lastName}`
 
   return (
     <FlexBetween padding ="1rem 6%" backgroundColor = {alt}>
@@ -52,6 +51,12 @@ const Navbar = () => {
           fontSize="clamp(1rem, 2rem, 2.25rem)"
           color = "primary"
           onClick={() => navigate("/home")}
+          sx = {{
+            "&:hover": {
+              color:primaryLight,
+              cursor: "pointer"
+            }
+          }}
             >
             Social Media
           </Typography>
@@ -162,7 +167,10 @@ const Navbar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
-              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
+              <MenuItem onClick={() => {
+                dispatch(setLogout());
+                navigate("/")
+                }}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
