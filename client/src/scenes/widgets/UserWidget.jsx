@@ -55,7 +55,7 @@ const UserWidget = ({ userId, picturePath}) => {
         <FlexBetween
             gap="0.5rem"
             pb="1.1rem"
-            onClick={()=> navigate(`/profile/${user.Id}`)}
+            onClick={()=> navigate(`/profile/${user._id}`)}
         >
             <FlexBetween gap = '1rem'>
                 <UserImage image={picturePath}/>
@@ -105,7 +105,7 @@ const UserWidget = ({ userId, picturePath}) => {
 
             {/* Fourth Row */}
             <Box p ="1rem 0">
-                <Typography fontSize="1rem" color ={main} fontweight = "500" mb = "1rem">
+                <Typography fontSize="1rem" color ={main} fontWeight = "500" mb = "1rem">
                     Social Profiles
                 </Typography>
                 <FlexBetween gap ="1rem" mb="0.5rem">

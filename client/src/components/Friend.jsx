@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath}) => {
 
     const patchFriend = async() => {
         const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`,{
-            mehton: "PATCH",
+            method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
                 "Content-type": "application/json",
